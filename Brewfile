@@ -6,12 +6,10 @@ tap 'caskroom/versions'
 tap 'homebrew/bundle'
 
 # Binaries
-brew 'awscli'
 brew 'bash' # Bash 4
 brew 'bat'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
-brew 'gnupg2'
 brew 'grep'
 brew 'mackup'
 brew 'mas'
@@ -22,42 +20,54 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Development
-brew 'php'
-brew 'imagick'
-brew 'mysql'
-brew 'nginx'
+# Skip everything except node as most dev tools will
+# run in a VM dev environment - docker, vagrant, etc.
+# brew 'php'
+# brew 'imagick'
+# brew 'mysql'
+# brew 'nginx'
+# brew 'redis'
 brew 'node'
-brew 'redis'
 
 # Apps
+cask 'adobe-acrobat-reader'
 cask 'aerial'
 cask 'alfred'
-cask 'caffeine'
-cask 'discord'
+cask 'authy'
+cask 'bitbar'
+cask 'choosy'
+cask 'daisydisk'
+cask 'delta'
 cask 'docker'
 cask 'dropbox'
-cask 'eid-be'
-cask 'eid-be-viewer'
+cask 'figma'
 cask 'firefox'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
-cask 'gpg-suite'
-cask 'insomnia'
+cask 'imagealpha'
+cask 'imageoptim'
+cask 'iterm2'
 cask 'java'
-cask 'mysqlworkbench'
-cask 'phpstorm'
-cask 'sequel-pro'
+cask 'karabiner-elements'
+cask 'kindle'
+cask 'logitech-unifying'
+cask 'macdown'
+cask 'microsoft-office'
+cask 'private-internet-access'
+cask 'qbittorrent'
+cask 'sketch'
 cask 'skype'
 cask 'slack'
-cask 'sublime-text'
-cask 'tableplus'
-cask 'there'
-cask 'tor-browser'
-cask 'tower2'
-cask 'transmit'
+cask 'sourcetree'
+cask 'spotify'
+cask 'stay'
+cask 'teamviewer'
+cask 'totalfinder'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
+cask 'visual-studio-code'
+cask 'vlc'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -76,14 +86,6 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
-mas '1Password', id: 1333542190
-mas 'Byword', id: 420212497
-mas 'Giphy Capture', id: 668208984
-mas 'Keynote', id: 409183694
-mas 'Sip', id: 507257563
-mas 'Spark', id: 1176895641
+mas 'Gapplin', id: 768053424
 mas 'The Unarchiver', id: 425424353
-mas 'Things', id: 904280696
-mas 'Tweetbot', id: 1384080005
-mas 'Unsplash', id: 1284863847
 mas 'WhatsApp', id: 1147396723 
