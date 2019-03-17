@@ -1,8 +1,7 @@
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/eid'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
 # Binaries
@@ -50,7 +49,7 @@ cask 'iterm2'
 cask 'java'
 cask 'karabiner-elements'
 cask 'kindle'
-cask 'logitech-unifying'
+cask 'logitech-control-center'
 cask 'macdown'
 cask 'microsoft-office'
 cask 'private-internet-access'
