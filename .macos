@@ -13,7 +13,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Enable Subpixel Antialiasing in Mojave
+# https://www.howtogeek.com/358596/how-to-fix-blurry-fonts-on-macos-mojave-with-subpixel-antialiasing/
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
 
 # Disable transparency in the menu bar and panels on Yosemite = better font rendering
 defaults write com.apple.universalaccess reduceTransparency -bool true
@@ -26,6 +28,9 @@ sudo nvram SystemAudioVolume=" "
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+# Scrollbar visibility - "WhenScrolling" | "Automatic" | "Always"
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
@@ -199,7 +204,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
-# Dark menu bar and dock
+# Light menu bar and dock
 defaults write $HOME/Library/Preferences/.GlobalPreferences.plist AppleInterfaceTheme -string "Light"
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -439,11 +444,14 @@ defaults write com.apple.ical "first minute of work hours" 540
 defaults write com.apple.menuextra.clock DateFormat "EEE d MMM  h:mm a"
 
 ###############################################################################
-# Battery monitor                                                             #
+# Menu bar                                                                    #
 ###############################################################################
 
 # Battery
 defaults write com.apple.menuextra.battery ShowPercent YES
+
+# Sound volume
+defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/Volume.menu"
 
 ###############################################################################
 # Photos                                                                      #

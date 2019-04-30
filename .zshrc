@@ -43,7 +43,7 @@ ZSH_THEME="taybalt-custom"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="dd-mm-yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$DOTFILES
@@ -52,14 +52,14 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git git-extras)
+plugins=(git)
 
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-export LC_ALL=en_UK.UTF-8
-export LANG=en_UK.UTF-8
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -73,3 +73,12 @@ export LANG=en_UK.UTF-8
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# # Keyboard bindings
+# bindkey -e
+# # option + [left, right] => skip words
+# bindkey '\e\e[C' forward-word
+# bindkey '\e\e[D' backward-word
+# # [up, down] on a partial command => search history for similar commands
+# # bindkey '\e[A' history-search-backward
+# # bindkey '\e[B' history-search-forward
