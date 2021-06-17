@@ -1,6 +1,6 @@
 # ~~Dries~~ Mark's Dotfiles
 
-This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my preffered setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy! :smile:
+This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my prefered setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy! :smile:
 
 Forked from [driesvints/dotfiles](https://github.com/driesvints/dotfiles) - read the [blog post](https://driesvints.com/blog/getting-started-with-dotfiles)
 
@@ -12,11 +12,10 @@ These instructions are for when you've already set up your dotfiles. If you want
 
 First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
 
-- Did you commit and push any changes/branches to your git repositories?
-- Did you remember to save all important documents from non-iCloud directories?
-- Did you save all of your work from apps which aren't synced through iCloud?
-- Did you remember to export important data from your local database?
-- Did you update [mackup](https://github.com/lra/mackup) to the latest version and ran `mackup backup`?
+- Commit and push any changes/branches to your git repositories
+- Save all important documents from non-iCloud/Dropbox directories
+- Export data from any local databases
+- Update [mackup](https://github.com/lra/mackup) to the latest version - `brew upgrade mackup` - and run `mackup backup`
 
 ### Installing macOS cleanly
 

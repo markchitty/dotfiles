@@ -37,7 +37,6 @@ cask 'authy'
 cask 'bitbar'
 cask 'choosy'
 cask 'daisydisk'
-cask 'delta'
 cask 'docker'
 cask 'dropbox'
 cask 'figma'
@@ -52,10 +51,12 @@ cask 'karabiner-elements'
 cask 'kindle'
 cask 'logitech-control-center'
 cask 'macdown'
-cask 'microsoft-office'
+cask 'microsoft-word'
+cask 'microsoft-excel'
+cask 'microsoft-powerpoint'
+cask 'microsoft-teams'
 cask 'private-internet-access'
 cask 'qbittorrent'
-cask 'sketch'
 cask 'skype'
 cask 'slack'
 cask 'sourcetree'
@@ -68,6 +69,9 @@ cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'webex'
+cask 'whatsapp'
+cask 'zoom'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -88,5 +92,3 @@ cask 'font-source-serif-pro'
 
 # Mac App Store
 mas 'Gapplin', id: 768053424
-mas 'The Unarchiver', id: 425424353
-mas 'WhatsApp', id: 1147396723 
