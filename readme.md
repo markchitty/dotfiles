@@ -1,8 +1,19 @@
 # ~~Dries~~ Mark's Dotfiles
 
-This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my prefered setup of macOS is detailed in this readme. Feel free to explore, learn and copy parts for your own dotfiles. Enjoy! :smile:
+This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my prefered setup of macOS is detailed in this readme.
 
-Forked from [driesvints/dotfiles](https://github.com/driesvints/dotfiles) - read the [blog post](https://driesvints.com/blog/getting-started-with-dotfiles)
+Forked from [driesvints/dotfiles](https://github.com/driesvints/dotfiles) - read the [blog post](https://driesvints.com/blog/getting-started-with-dotfiles).
+
+It works using:
+
+* **[Homebrew](https://brew.sh/) + Homebrew Bundle** - does the heavy lifting. Homebrew Bundle installs the resources listed in the accompanying Brewfile, using one of the following commands:
+  * tap - a repository of formulae (things to install)
+  * brew - a binary to install, e.g. git
+  * cask - a MacOS app to install, e.g. Figma *<= most apps are installed this way*
+  * mas - an AppStore app to install
+* **.zshrc** - handy shell settings
+* **[Mackup](https://github.com/lra/mackup)** - synchronises app settings to Dropbox
+* **.macos** - shell script configuration file that sets a bunch of system settings & preferences, e.g. hot-corners, scroll preferences, etc.
 
 ## A Fresh macOS Setup
 
@@ -26,19 +37,32 @@ After going to our checklist above and making sure you backed everything up, we'
 If you did all of the above you may now follow these install instructions to setup a new Mac.
 
 1. Update macOS to the latest version with the App Store
-1. Install Xcode from the App Store, open it and accept the license agreement
-1. Install macOS Command Line Tools by running `xcode-select --install`
+1. Install X-Code command-line tools:
+
+    ```
+    touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+    softwareupdate -i -a
+    rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+    ```
+
 1. Copy your public and private SSH keys to `~/.ssh` and make sure they're set to `600`
 1. Clone this repo to `~/.dotfiles`
 1. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
 1. Run `install.sh` to start the installation
 1. Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started) (shame brew cask can't do this)
+2. Login to Dropbox and get it sync-ing. Mackup needs Dropbox available to read the backed-up application settings.
 1. Restore preferences by running `mackup restore`
 1. Restart your computer to finalize the process
+2. Launch all the apps you've just installed.
 
-Your Mac is now ready to use!
+Your Mac is now (almost) ready to use.
 
-> Note: you can use a different location than `~/.dotfiles` if you want. Just make sure you also update the reference in the [`.zshrc`](./.zshrc) file.
+### Extra steps
+
+1. **Firefox** - [Backup and restore your current profile](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles).
+2. **Chrome** - [Chrome automatically syncs](https://support.google.com/chrome/answer/185277) tabs, extensions, etc between different Chrome instances. Restoring tabs doesn't happen automagically between machines though (which kinda makes sense to be fair). To restore tabs in the new Chrome instance go to  
+*History* (⌘Y) *> Tabs from other devices* (top left menu) *> Dots* (top right menu) *> Open all*. 
+
 
 ## Your Own Dotfiles
 
