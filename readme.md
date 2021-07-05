@@ -50,18 +50,19 @@ If you did all of the above you may now follow these install instructions to set
 1. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
 1. Run `install.sh` to start the installation
 1. Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started) (shame brew cask can't do this)
-2. Login to Dropbox and get it sync-ing. Mackup needs Dropbox available to read the backed-up application settings.
+1. Login to Dropbox and get it sync-ing. Mackup needs Dropbox available to read the backed-up application settings.
 1. Restore preferences by running `mackup restore`
 1. Restart your computer to finalize the process
-2. Launch all the apps you've just installed.
+1. Launch all the apps you've just installed.
 
 Your Mac is now (almost) ready to use.
 
 ### Extra steps
 
 1. **Firefox** - [Backup and restore your current profile](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles).
-2. **Chrome** - [Chrome automatically syncs](https://support.google.com/chrome/answer/185277) tabs, extensions, etc between different Chrome instances. Restoring tabs doesn't happen automagically between machines though (which kinda makes sense to be fair). To restore tabs in the new Chrome instance go to  
-*History* (⌘Y) *> Tabs from other devices* (top left menu) *> Dots* (top right menu) *> Open all*. 
+1. **Chrome** - [Chrome automatically syncs](https://support.google.com/chrome/answer/185277) tabs, extensions, etc between different Chrome instances. Restoring tabs doesn't happen automagically between machines though (which kinda makes sense to be fair). To restore tabs in the new Chrome instance go to  
+*History* (⌘Y) *> Tabs from other devices* (top left menu) *> Dots* (top right menu) *> Open all*.
+1. [Grant full disk access](https://github.com/mathiasbynens/dotfiles/issues/849#issuecomment-436099833) to Terminal and/or iTerm so that it can actually update OS / application preferences using the `defaults` command.
 
 
 ## Your Own Dotfiles
