@@ -72,8 +72,8 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Global keyboard shortcuts
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Minimise All" "@~$m"
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Save As..." "@$s"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Minimise All" "@~\$m"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Save As..." "@\$s"
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
