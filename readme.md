@@ -1,10 +1,8 @@
-# ~~Dries~~ Mark's Dotfiles
+# 💻 Dotfiles
 
-This repository serves as my way to help me setup and maintain my Mac. It takes the effort out of installing everything manually. Everything which is needed to install my prefered setup of macOS is detailed in this readme.
+Migrating to a new Mac is a pain. To alleviate that, this repository automates a bunch of the steps involved so there's way less to do manually. Forked from [driesvints/dotfiles](https://github.com/driesvints/dotfiles) (handy [blog post](https://driesvints.com/blog/getting-started-with-dotfiles)) - thanks Dries.
 
-Forked from [driesvints/dotfiles](https://github.com/driesvints/dotfiles) - read the [blog post](https://driesvints.com/blog/getting-started-with-dotfiles).
-
-It works using:
+### How it works
 
 * **[Homebrew](https://brew.sh/) + Homebrew Bundle** - does the heavy lifting. Homebrew Bundle installs the resources listed in the accompanying Brewfile, using one of the following commands:
   * tap - a repository of formulae (things to install)
@@ -15,29 +13,23 @@ It works using:
 * **[Mackup](https://github.com/lra/mackup)** - synchronises app settings to Dropbox
 * **.macos** - shell script configuration file that sets a bunch of system settings & preferences, e.g. hot-corners, scroll preferences, etc.
 
-## A Fresh macOS Setup
+# Fresh macOS setup
 
-These instructions are for when you've already set up your dotfiles. If you want to get started with your own dotfiles you can [find instructions below](#your-own-dotfiles).
+Assuming your dotfiles are already set up, start here. (Instructions on setting dotfiles for the first time are [below](#roll-your-own).)
 
-### Before you re-install
-
-First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
+## On your old machine
 
 - Commit and push any changes/branches to your git repositories
 - Save all important documents from non-iCloud/Dropbox directories
 - Export data from any local databases
 - Update [mackup](https://github.com/lra/mackup) to the latest version - `brew upgrade mackup` - and run `mackup backup`
 
-### Installing macOS cleanly
+## On your new machine
 
-After going to our checklist above and making sure you backed everything up, we're going to cleanly install macOS with the latest release. Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS.
-
-### Setting up your Mac
-
-If you did all of the above you may now follow these install instructions to setup a new Mac.
-
-1. Update macOS to the latest version with the App Store
-1. Install X-Code command-line tools:
+1. If your 'new' machine is actually a macOS re-install over your old machine follow [these steps](https://www.imore.com/how-do-clean-install-macos).
+2. Update macOS to the latest version with the App Store
+3. Git clone this repo to `~/.dotfiles`
+4. Install X-Code command-line tools (might already be handled by the previous step):
 
     ```
     touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
@@ -45,31 +37,27 @@ If you did all of the above you may now follow these install instructions to set
     rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
     ```
 
-1. Copy your public and private SSH keys to `~/.ssh` and make sure they're set to `600`
-1. Clone this repo to `~/.dotfiles`
-1. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
-1. Run `install.sh` to start the installation
-1. Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started) (shame brew cask can't do this)
-1. Login to Dropbox and get it sync-ing. Mackup needs Dropbox available to read the backed-up application settings.
-1. Restore preferences by running `mackup restore`
-1. Restart your computer to finalize the process
-1. Launch all the apps you've just installed.
+5. Copy your public and private SSH keys to `~/.ssh` and make sure they're set to `600`
+6. [Grant full disk access](https://github.com/mathiasbynens/dotfiles/issues/849#issuecomment-436099833) to Terminal and/or iTerm so that it can actually update OS / application preferences using the `defaults` command.
+7. Run `install.sh` to start the installation
+8. Login to Dropbox and get it sync-ing. Mackup needs Dropbox available to read the backed-up application settings.
+9.  Restore preferences by running `mackup restore`
 
-Your Mac is now (almost) ready to use.
+At this point all the dotfile wizardry is complete. You now have to resume the tedious mop-up of manual steps...
 
-### Extra steps
-
-1. **Firefox** - [Backup and restore your current profile](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles).
-1. **Chrome** - [Chrome automatically syncs](https://support.google.com/chrome/answer/185277) tabs, extensions, etc between different Chrome instances. Restoring tabs doesn't happen automagically between machines though (which kinda makes sense to be fair). To restore tabs in the new Chrome instance go to  
+1. Restart your computer and launch all the apps you've just installed. Click lots of 'I accept' buttons.
+2. **Firefox** - [Backup and restore your current profile](https://support.mozilla.org/en-US/kb/back-and-restore-information-firefox-profiles).
+3. **Chrome** - [Chrome automatically syncs](https://support.google.com/chrome/answer/185277) tabs, extensions, etc between different Chrome instances. Restoring tabs doesn't happen automagically between machines though (which kinda makes sense to be fair). To restore tabs in the new Chrome instance go to  
 *History* (⌘Y) *> Tabs from other devices* (top left menu) *> Dots* (top right menu) *> Open all*.
-1. [Grant full disk access](https://github.com/mathiasbynens/dotfiles/issues/849#issuecomment-436099833) to Terminal and/or iTerm so that it can actually update OS / application preferences using the `defaults` command.
+1. Enable email accounts (System preferences > Internet accounts) and start syncing email.
+2. Set desktop backgrounds and screensaver ([Aerial](https://aerialscreensaver.github.io/) is awesome).
+3. Install hardware drivers, e.g. RME Babyface
 
-
-## Your Own Dotfiles
+# Roll your own
 
 If you want to start with your own dotfiles from this setup, it's pretty easy to do so. First of all you'll need to fork this repo. After that you can tweak it the way you want.
 
-**Please note that the instructions below assume you already have set up Oh My Zsh so make sure to first [install Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started) before you continue.**
+The instructions below assume you already have set up Oh My Zsh so make sure to first [install Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh#getting-started) before you continue.
 
 Go through the [`.macos`](./.macos) file and adjust the settings to your liking. You can find much more settings at [the original script by Mathias Bynens](https://github.com/mathiasbynens/dotfiles/blob/master/.macos) and [Kevin Suttle's macOS Defaults project](https://github.com/kevinSuttle/MacOS-Defaults).
 
@@ -88,7 +76,9 @@ You can tweak the shell theme, the Oh My Zsh settings and much more. Go through 
 
 Enjoy your own Dotfiles!
 
-## Thanks To...
+______
+
+## Thanks
 
 I first got the idea for starting this project by visiting the [Github does dotfiles](https://dotfiles.github.io/) project. Both [Zach Holman](https://github.com/holman/dotfiles) and [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) were great sources of inspiration. [Sourabh Bajaj](https://twitter.com/sb2nov/)'s [Mac OS X Setup Guide](http://sourabhbajaj.com/mac-setup/) proved to be invaluable. Thanks to [Taylor Otwell](https://twitter.com/taylorotwell) for his awesome Zsh theme! And lastly, I'd like to thank [Maxime Fabre](https://twitter.com/anahkiasen) for [his excellent presentation on Homebrew](https://speakerdeck.com/anahkiasen/a-storm-homebrewin) which made me migrate a lot to a [`Brewfile`](./Brewfile) and [Mackup](https://github.com/lra/mackup).
 
