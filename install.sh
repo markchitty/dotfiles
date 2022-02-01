@@ -4,7 +4,9 @@ echo "Setting up your Mac..."
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/mark/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Update Homebrew recipes
@@ -16,6 +18,9 @@ brew bundle
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
+
+# Install Oh my Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install global NPM packages
 npm install --global yarn
