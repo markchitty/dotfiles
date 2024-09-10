@@ -13,6 +13,7 @@ brew 'git'
 brew 'grep'
 brew 'mackup'
 brew 'mas'
+brew 'MonitorControl'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'trash'
 brew 'tree'
