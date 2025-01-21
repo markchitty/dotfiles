@@ -11,6 +11,7 @@ brew 'bat'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
 brew 'grep'
+brew 'imagemagick'
 brew 'mackup'
 brew 'mas'
 brew 'MonitorControl'
@@ -21,14 +22,14 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Development
-# Skip everything except node as most dev tools will
-# run in a VM dev environment - docker, vagrant, etc.
 # brew 'php'
 # brew 'imagick'
 # brew 'mysql'
 # brew 'nginx'
 # brew 'redis'
-brew 'node'
+# brew 'node'
+# Usw fnm to manage node versions
+brew 'fnm'
 
 # Apps
 cask 'adobe-acrobat-reader'

@@ -82,3 +82,10 @@ export LANG=en_GB.UTF-8
 # # [up, down] on a partial command => search history for similar commands
 # # bindkey '\e[A' history-search-backward
 # # bindkey '\e[B' history-search-forward
+
+# sdkman configuration - https://github.com/sdkman/homebrew-tap
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+# fnm (fast nvm - https://github.com/Schniz/fnm)
+eval "$(fnm env --use-on-cd --shell zsh)"
